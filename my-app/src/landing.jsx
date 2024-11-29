@@ -1,11 +1,11 @@
 import { React, useState } from 'react';
+import { motion } from "framer-motion";
 
 const Landing = () => {
     const [ navBarOpen, setNavBarOpen ] = useState(false);
 
     return (
-        <div class="h-screen flex flex-col bg-slate-800 text-white">
-            
+        <div class="h-screen bg-slate-800 text-white">
             <nav class="shadow-md">
                 <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -44,8 +44,26 @@ const Landing = () => {
                 }
             </nav>
             
-            <div class="flex justify-center items-center text-center flex-grow">
+            {/* TRANSITION!!! */}
+            {/* <motion.div class="flex justify-center items-center text-center flex-grow"
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}
+                transition={{ duration: 1.5 }}
+            >
                 <h1 class="text-4xl font-bold text-white">Hello, world!</h1>
+            </motion.div> */}
+            <div class="flex flex-grow justify-between px-10">
+                <div class="hidden md:block flex-col justify-start py-12 sticky">
+                    <h1 class="flex text-8xl font-bold text-white">Jack Chin</h1>
+                    <div class="hidden md:block flex-col justify-between py-4">
+                        <h1 class="text-2xl font-bold text-white">Who Am I?</h1>
+                        <h1 class="text-2xl font-bold text-white">Experience</h1>
+                        <h1 class="text-2xl font-bold text-white">Projects</h1>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center text-center">
+                    <h1 class="text-4xl font-bold text-white">Hello, world!</h1>
+                </div>
             </div>
         </div>
     );
